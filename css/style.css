@@ -17,6 +17,7 @@ html{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    height: 100vh;
 }
 
 body{
@@ -36,7 +37,6 @@ body{
         45px 60px,
         70px 20px,
         5px  80px;
-    min-height: 100vh;
     font-family: "Albert Sans", sans-serif;
     display: flex;
     flex-direction: column;
@@ -168,7 +168,7 @@ main {
 
     .image {
         position: absolute;
-        bottom: -2rem;
+        bottom: -6rem;
         left: 11rem; 
         width: clamp(120px, 18vw, 200px);
         margin: 0;
@@ -182,7 +182,7 @@ main {
     }
 
 footer {
-    margin-top: -1rem;
+    margin-top: 3rem;
     display: flex;
     justify-content: center;
 }
