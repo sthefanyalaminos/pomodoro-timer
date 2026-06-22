@@ -55,8 +55,8 @@ const THEMES = {
 
 function getPeriod() {
   const hour = new Date().getHours();
-  if (hour >= 5 && hour < 13)  return "morning";
-  if (hour >= 13 && hour < 19) return "afternoon";
+  if (hour >= 5 && hour < 12)  return "morning";
+  if (hour >= 12 && hour < 19) return "afternoon";
   return "night";
 }
 
