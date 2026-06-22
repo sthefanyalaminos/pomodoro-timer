@@ -51,4 +51,34 @@ const THEMES = {
     partnerImage:       "assets/images/afternoon.png",
   },
 
+};
+
+function getPeriod() {
+  const hour = new Date().getHours();
+  if (hour >= 5 && hour < 13)  return "morning";
+  if (hour >= 13 && hour < 19) return "afternoon";
+  return "night";
+}
+
+function applyTheme(theme) {
+  const root  = document.documentElement;
+  const style = document.createElement("style");
+ 
+  
+  style.textContent = `
+    header button:hover { background-color: ${theme.headerBtnHoverBg} !important; }
+    footer button:hover { background-color: ${theme.footerBtnHoverBg} !important; }
+  `;
+  document.head.appendChild(style);
+ 
+  // h1
+  const h1 = document.querySelector("h1");
+  if (h1) h1.style.color = theme.h1Color;
+ 
+  // header buttons 
+  document.querySelectorAll("header button").forEach(btn => {
+    btn.style.backgroundColor = theme.headerBtnBg;
+    btn.style.color            = theme.headerBtnColor;
+  });
+
 }
