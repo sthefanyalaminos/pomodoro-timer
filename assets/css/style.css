@@ -115,8 +115,7 @@ main {
         justify-content: center;
     }
 
-    .container_hours::after {
-        content: "00:00";
+    #timer-display {
         font-family: "Caprasimo", serif;
         font-size: clamp(3rem, 8vw, 5.5rem);
         color: var(--timer-color, var(--first-brown));
