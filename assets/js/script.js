@@ -128,10 +128,72 @@ const timer = {
 };
 
 
+function formatTime(seconds) {
+  const m = String(Math.floor(seconds / 60)).padStart(2, "0");
+  const s = String(seconds % 60).padStart(2, "0");
+  return `${m}:${s}`;
+}
+
+function renderDisplay() {
+  const display = document.getElementById("timer-display");
+  if (display) display.textContent = formatTime(timer.secondsLeft);
+}
+
+function switchPhase() {
+  timer.isFocus     = !timer.isFocus;
+  timer.secondsLeft = timer.isFocus ? POMODORO.focus : POMODORO.break;
+  renderDisplay();
+}
+
+function tick() {
+  if (timer.secondsLeft === 0) {
+    switchPhase();
+    return;
+  }
+  timer.secondsLeft--;
+  renderDisplay();
+}
+
+function start() {
+  if (timer.isRunning) return;
+  timer.isRunning = true;
+  timer.intervalId = setInterval(tick, 1000);
+}
+
+function pause() {
+  clearInterval(timer.intervalId);
+  timer.isRunning = false;
+}
+
+function reset() {
+  pause();
+  timer.isFocus     = true;
+  timer.secondsLeft = POMODORO.focus;
+  renderDisplay();
+}
+
+function injectTimerDisplay() {
+  const container = document.querySelector(".container_hours");
+  if (!container) return;
+  const span = document.createElement("span");
+  span.id = "timer-display";
+  span.textContent = formatTime(timer.secondsLeft);
+  container.appendChild(span);
+}
+
+function bindButtons() {
+  const [btnStart, btnPause, btnReset] = document.querySelectorAll("header button");
+  btnStart?.addEventListener("click", start);
+  btnPause?.addEventListener("click", pause);
+  btnReset?.addEventListener("click", reset);
+}
 
 
 document.addEventListener("DOMContentLoaded", () => {
   const period = getPeriod();
   applyTheme(THEMES[period]);
   console.log(`[Study Room] Period detected: ${period}`);
+
+  injectTimerDisplay();
+  bindButtons();
 });
