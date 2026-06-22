@@ -81,4 +81,25 @@ function applyTheme(theme) {
     btn.style.color            = theme.headerBtnColor;
   });
 
+  // footer button
+  const footerBtn = document.querySelector("footer button");
+  if (footerBtn) {
+    footerBtn.style.backgroundColor = theme.footerBtnBg;
+    footerBtn.style.color            = theme.footerBtnColor;
+  }
+
+  // containers background
+  document.querySelectorAll(".container_hours, .container_list, .container_notes").forEach(el => {
+    el.style.backgroundColor = theme.containerBg;
+  });
+ 
+  // timer text
+  root.style.setProperty("--timer-color", theme.containerTimerText);
+ 
+  // card backgrounds + h2 text color
+  document.querySelectorAll(".container_list h2, .container_notes h2").forEach(h2 => {
+    h2.style.backgroundColor = theme.cardBg;
+    h2.style.color            = theme.cardTextColor;
+  });
+
 }
