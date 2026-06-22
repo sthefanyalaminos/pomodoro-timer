@@ -188,7 +188,77 @@ function bindButtons() {
   btnReset?.addEventListener("click", reset);
 }
 
+// TO-DO CONFIGURATION
 
+function createTodoItem(placeholder = "new task...") {
+  const item = document.createElement("div");
+  item.className = "todo-item";
+ 
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+ 
+  const text = document.createElement("input");
+  text.type = "text";
+  text.placeholder = placeholder;
+ 
+  checkbox.addEventListener("change", () => {
+    item.classList.toggle("done", checkbox.checked);
+  });
+ 
+  text.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") addTodoItem();
+  });
+ 
+  item.append(checkbox, text);
+  return item;
+}
+ 
+function addTodoItem() {
+  const body = document.querySelector(".container_list .card-body");
+  if (!body) return;
+ 
+  const addBtn = body.querySelector(".todo-add-btn");
+  const item = createTodoItem();
+  body.insertBefore(item, addBtn);
+  item.querySelector("input[type='text']").focus();
+}
+ 
+function initTodoList() {
+  const container = document.querySelector(".container_list");
+  if (!container) return;
+ 
+  const body = document.createElement("div");
+  body.className = "card-body";
+ 
+  const addBtn = document.createElement("button");
+  addBtn.className = "todo-add-btn";
+  addBtn.textContent = "+ adicionar";
+  addBtn.addEventListener("click", addTodoItem);
+ 
+  body.appendChild(addBtn);
+  container.appendChild(body);
+ 
+  addTodoItem();
+}
+
+// NOTES CONFIGURATION
+
+function initNotes() {
+  const container = document.querySelector(".container_notes");
+  if (!container) return;
+ 
+  const body = document.createElement("div");
+  body.className = "card-body";
+ 
+  const area = document.createElement("textarea");
+  area.className = "notes-area";
+  area.placeholder = "write your notes here...";
+ 
+  body.appendChild(area);
+  container.appendChild(body);
+}
+
+// INITIALIZATION
 document.addEventListener("DOMContentLoaded", () => {
   const period = getPeriod();
   applyTheme(THEMES[period]);
@@ -196,4 +266,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   injectTimerDisplay();
   bindButtons();
+  initTodoList();
+  initNotes();
 });
