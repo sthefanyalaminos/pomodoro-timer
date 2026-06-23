@@ -111,8 +111,20 @@ main {
         background-color: var(--first-pink);
         border-radius: 1.25rem;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
+        gap: 0.1rem;
+    }
+
+    #phase-label {
+        font-family: "Albert Sans", sans-serif;
+        font-size: 0.95rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--timer-color, var(--first-brown));
+        min-height: 1.2em;
     }
 
     #timer-display {
