@@ -258,6 +258,46 @@ function initNotes() {
   container.appendChild(body);
 }
 
+// INFO-CARD CONFIGURATION
+
+const INFO_TEXT = `Pomodoro Timer is a focused study environment built around the Pomodoro Technique: A time management method that breaks your study session into 25-minute focused intervals, followed by a 5-minute break.
+
+This structure helps your brain process and retain information more effectively, while preventing burnout and mental fatigue.
+
+Alongside the timer, you'll find a to-do list to organize your tasks and a notes section to capture ideas as you study.`;
+
+function createInfoCard() {
+  const card = document.createElement("div");
+  card.id = "info-card";
+
+  INFO_TEXT.split("\n\n").forEach(paragraph => {
+    const p = document.createElement("p");
+    p.textContent = paragraph;
+    card.appendChild(p);
+  });
+
+  return card;
+}
+
+function applyInfoCardTheme(card, theme) {
+  card.style.color = cssValue(theme.h1Color);
+}
+
+function initInfoCard() {
+  const footerBtn = document.querySelector("footer button");
+  if (!footerBtn) return;
+
+  const card = createInfoCard();
+  document.querySelector("footer").appendChild(card);
+
+  footerBtn.addEventListener("click", () => {
+    card.classList.toggle("info-card--visible");
+  });
+
+  return card;
+}
+
+
 // INITIALIZATION
 document.addEventListener("DOMContentLoaded", () => {
   const period = getPeriod();
