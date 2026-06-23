@@ -25,7 +25,7 @@ const THEMES = {
     headerBtnColor:     "--second-red",   
     headerBtnHoverBg:   "#d9d4cc",   
     footerBtnBg:        "--second-blue",   
-    footerBtnColor:     "--principal-gray",   
+    footerBtnColor:     "#fff",   
     footerBtnHoverBg:   "#9fabcbe8",   
  
     containerBg:        "--second-pink",   
