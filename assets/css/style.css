@@ -273,3 +273,29 @@ footer {
     footer button:hover {
         background-color: #8a5c5f;
     }
+
+    #info-card {
+        display: none;
+        background-color: #fcf7f0;
+        border-radius: 1.5rem 1.5rem 1.5rem 0.3rem;
+        padding: 1.5rem 2rem;
+        max-width: 50rem;
+        margin: 1rem auto 0;
+        font-family: "Albert Sans", sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.7;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+    }
+
+    #info-card.info-card--visible {
+        display: block;
+    }
+
+    #info-card p {
+        margin: 0 0 1rem;
+    }
+
+    #info-card p:last-child {
+        margin-bottom: 0;
+    }
