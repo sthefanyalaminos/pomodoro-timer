@@ -102,6 +102,9 @@ function applyTheme(theme) {
   // timer text
   root.style.setProperty("--timer-color", cssValue(theme.containerTimerText));
 
+  const phaseLabel = document.getElementById("phase-label");
+  if (phaseLabel) phaseLabel.style.color = cssValue(theme.containerTimerText);
+
   // card backgrounds + h2 text color
   document.querySelectorAll(".container_list h2, .container_notes h2").forEach(h2 => {
     h2.style.backgroundColor = cssValue(theme.cardBg);
@@ -175,10 +178,21 @@ function reset() {
 function injectTimerDisplay() {
   const container = document.querySelector(".container_hours");
   if (!container) return;
+
+  const label = document.createElement("span");
+  label.id = "phase-label";
+
   const span = document.createElement("span");
   span.id = "timer-display";
   span.textContent = formatTime(timer.secondsLeft);
+
+  container.appendChild(label);
   container.appendChild(span);
+}
+
+function updatePhaseLabel() {
+  const label = document.getElementById("phase-label");
+  if (label) label.textContent = timer.isFocus ? "focus!" : "take a break!";
 }
 
 function bindButtons() {
