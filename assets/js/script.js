@@ -26,7 +26,7 @@ const THEMES = {
     headerBtnHoverBg:   "#d9d4cc",   
     footerBtnBg:        "--second-blue",   
     footerBtnColor:     "#f5f5f5",   
-    footerBtnHoverBg:   "#9fabcbe8",   
+    footerBtnHoverBg:   "#9ca7c5e8",   
  
     containerBg:        "--second-pink",   
     containerTimerText: "--second-red",  
