@@ -146,6 +146,7 @@ function switchPhase() {
   timer.isFocus     = !timer.isFocus;
   timer.secondsLeft = timer.isFocus ? POMODORO.focus : POMODORO.break;
   renderDisplay();
+  updatePhaseLabel();
 }
 
 function tick() {
@@ -161,6 +162,7 @@ function start() {
   if (timer.isRunning) return;
   timer.isRunning = true;
   timer.intervalId = setInterval(tick, 1000);
+  updatePhaseLabel();
 }
 
 function pause() {
@@ -173,6 +175,8 @@ function reset() {
   timer.isFocus     = true;
   timer.secondsLeft = POMODORO.focus;
   renderDisplay();
+  const label = document.getElementById("phase-label");
+  if (label) label.textContent = "";
 }
 
 function injectTimerDisplay() {
