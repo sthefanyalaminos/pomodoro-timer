@@ -308,4 +308,7 @@ document.addEventListener("DOMContentLoaded", () => {
   bindButtons();
   initTodoList();
   initNotes();
+
+  const infoCard = initInfoCard();
+  applyInfoCardTheme(infoCard, THEMES[period]);
 });
