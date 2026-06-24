@@ -4,7 +4,7 @@ Ambiente de estudos construído em torno da Técnica Pomodoro. A interface adapt
 
 <img src="assets/images/img_readme1.png">
 <img src="assets/images/img_readme2.png">
-
+<img src="assets/images/img_readme3.png">
 
 ---
 

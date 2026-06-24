@@ -3,6 +3,7 @@ A study environment built around the Pomodoro Technique. The interface adapts it
  
 <img src="assets/images/img_readme1.png">
 <img src="assets/images/img_readme2.png">
+<img src="assets/images/img_readme3.png">
 
 ---
  
