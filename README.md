@@ -1,4 +1,5 @@
 # ⏱️ Pomodoro Timer
+[Translate to English](https://github.com/sthefanyalaminos/pomodoro-timer/blob/main/README_EN.md) 
 
 Ambiente de estudos construído em torno da Técnica Pomodoro. A interface adapta seu tema de cores de acordo com o período do dia, noite, manhã ou tarde, e reúne tudo o que você precisa em um só lugar para uma study session: um timer, uma lista de tarefas e um bloco de notas.
 
