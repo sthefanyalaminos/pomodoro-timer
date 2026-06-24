@@ -19,3 +19,17 @@ Uma área de texto livre para registrar ideias, referências ou qualquer coisa q
 A interface detecta o horário atual e aplica um dos três temas, noite, manhã ou tarde, ajustando as cores de todos os elementos automaticamente.
 
 ---
+
+## Tecnologias
+
+- HTML5
+- CSS3 (Flexbox, custom properties)
+- JavaScript
+- Google Fonts: [Caprasimo](https://fonts.google.com/specimen/Caprasimo), [Albert Sans](https://fonts.google.com/specimen/Albert+Sans)
+
+
+---
+
+## Autoria
+
+Desenvolvido por Sthefany Alaminos.
