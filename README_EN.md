@@ -1,6 +1,9 @@
 # ⏱️ Pomodoro Timer
 A study environment built around the Pomodoro Technique. The interface adapts its color theme based on the time of day: Night, morning, or afternoon - and brings everything you need for a study session into one place: a timer, a to-do list, and a notes section.
  
+<img src="assets/images/img_readme1.png">
+<img src="assets/images/img_readme2.png">
+
 ---
  
 ## Features
